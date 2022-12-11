@@ -31,6 +31,7 @@ public class UserController {
     public JsonResult findAll(){
         System.out.println("second commit");
         System.out.println("third commit");
+        System.out.println("hot-fix commit");
         List<User> lists = userService.findAll();
         String s = JSON.toJSONString(lists);
         jsonResult.setObject(lists);
