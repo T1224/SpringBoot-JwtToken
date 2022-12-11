@@ -30,6 +30,7 @@ public class UserController {
     @RequestMapping("/findAll")
     public JsonResult findAll(){
         System.out.println("second commit");
+        System.out.println("third commit");
         List<User> lists = userService.findAll();
         String s = JSON.toJSONString(lists);
         jsonResult.setObject(lists);
