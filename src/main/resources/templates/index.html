@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <button>查询所有用户</button>
+    <table id="tt">
+        <tr>
+            <td>用户名</td>
+            <td>密码</td>
+        </tr>
+        <tr></tr>
+    </table>
+<script>
+    $("button").click(function () {
+        $.ajax({
+            url: "/findAll",
+            type: "get",
+            success: function (data) {
+                    console.log(data);
+                $(data.object).each(function(i,k){
+                    $("#tt").append("<tr><td>" + k.username + "</td><td>" + k.password + "</td></tr>");
+                })
+                // $("#users").html("<td>" + data.object[0].username + "</td><td>" + data.object[0].password + "</td>");
+            },
+            error: function (){
+                console.log("error");
+            }
+        })
+    })
+</script>
+</body>
+</html>
