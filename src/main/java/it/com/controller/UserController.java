@@ -30,6 +30,7 @@ public class UserController {
     @RequestMapping("/findAll")
     public JsonResult findAll(){
         System.out.println("push test");
+         System.out.println("pull test");
         List<User> lists = userService.findAll();
         String s = JSON.toJSONString(lists);
         jsonResult.setObject(lists);
